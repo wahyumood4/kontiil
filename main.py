@@ -695,11 +695,7 @@ def kbbi():
 			url = f'https://api.arugaz.my.id/api/edu/kbbi?query={tak}'
 			kata = get(url).json()
 			return {
-				'status': kata['status'],
-				'hasil': kata['arti'],
-				'lema': kata['lema'],
-				
-				
+				'hasil': kata['arti'],'lema': kata['lema'],'status': kata['status'],	
 			}
 		except:
 			return {
