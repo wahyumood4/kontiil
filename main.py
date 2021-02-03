@@ -662,6 +662,29 @@ def jadwalshalat():
 			'status': False,
 			'msg': '[!] Masukkan parameter daerah'
 		}
+@app.route('/api/tiktod', methods=['GET','POST'])
+def tiktod():
+	if request.args.get('link'):
+		try:
+			tiktod1 = request.args.get('link')
+			url = f'https://api.arugaz.my.id/api/media/tiktok?url={tiktod1}'
+			tikd = get(url).json()
+			return {
+				'link': tikd['result']['mp4direct'],
+				'title': tikd['result']['nameInfo'],
+				'image': tikd['result']['image'],
+				
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter daerah'
+		}
 
 @app.route('/api/waifu', methods=['GET','POST'])
 def waifu():
