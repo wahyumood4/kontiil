@@ -692,11 +692,12 @@ def kbbi():
 	if request.args.get('kata'):
 		try:
 			tak = request.args.get('kata')
-			url = f'https://api.arugaz.my.id/api/primbon/artinama?name={tak}'
+			url = f'https://api.arugaz.my.id/api/edu/kbbi?query={tak}'
 			kata = get(url).json()
 			return {
-				'status': 200,
+				'status': kata['status'],
 				'hasil': kata['result']['arti'],
+				'lema': kata['result']['lema'],
 				
 				
 			}
