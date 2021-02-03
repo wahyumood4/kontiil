@@ -685,9 +685,31 @@ def tiktod():
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter daerah'
+			'msg': '[!] Masukkan parameter url'
 		}
-
+@app.route('/api/kbbi', methods=['GET','POST'])
+def kbbi():
+	if request.args.get('kata'):
+		try:
+			tak = request.args.get('kata')
+			url = f'https://api.arugaz.my.id/api/primbon/artinama?name={tak}'
+			kata = get(url).json()
+			return {
+				'status': 200,
+				'hasil': kata['result']['arti'],
+				
+				
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter kata'
+		}
 @app.route('/api/waifu', methods=['GET','POST'])
 def waifu():
 	scrap = bs(get('https://mywaifulist.moe/random').text, 'html.parser')
