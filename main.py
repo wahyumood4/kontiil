@@ -696,8 +696,8 @@ def kbbi():
 			kata = get(url).json()
 			return {
 				'status': kata['status'],
-				'hasil': kata['result']['arti'],
-				'lema': kata['result']['lema'],
+				'hasil': kata['arti'],
+				'lema': kata['lema'],
 				
 				
 			}
