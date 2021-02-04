@@ -65,6 +65,32 @@ def layer():
 			'msg': '[!] Masukkan parameter base64image'
 		}
 
+
+@app.route('/api/zodiak', methods=['GET','POST'])
+def zodiak():
+	if request.args.get('tgl-bln-thn'):
+		try:
+			tak = request.args.get('tgl-bln-thn')
+			url = f'https://arugaz.herokuapp.com/api/getzodiak?nama=wahyu&tgl-bln-thn={tak}'
+			kata = get(url).json()
+			return {
+				'lahir': kata['lahir'],
+				'ultah': kata['ultah'],
+				'usia': kata['usia'],
+				'zodiak': kata['zodiak'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter tgl-bln-thn'
+		}		
+		
 @app.route('/api/namaninja', methods=['GET','POST'])
 def namaninja():
 	if request.args.get('nama'):
