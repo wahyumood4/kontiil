@@ -66,6 +66,28 @@ def layer():
 		}
 
 
+@app.route('/api/nulis', methods=['GET','POST'])
+def nulis():
+	if request.args.get('kata'):
+		try:
+			tak = request.args.get('kata')
+			url = f'http://salism3.pythonanywhere.com/write?text={tak}'
+			kata = get(url).json()
+			return {
+				'hasil': kata['images'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter kata'
+		}		
+	
 @app.route('/api/twtimage', methods=['GET','POST'])
 def twtimage():
 	if request.args.get('url'):
@@ -378,27 +400,7 @@ def spamming():
             'msg': '[!] Masukkan parameter no'
         }
 
-@app.route('/nulis', methods=['GET','POST'])
-def noolees():
-    if request.args.get('text'):
-        try:
-            nulis = tulis(unquote(request.args.get('text')))
-            for i in nulis:
-                i.save('resolt.jpg')
-            return {
-                'status': 200,
-                'result': imageToBase64('resolt.jpg')
-            }
-        except:
-            return {
-                'status': False,
-                'error': 'Failed writing dude:('
-            }
-    else:
-        return {
-            'status': False,
-            'msg': '[!] Masukkan parameter text'
-        }
+
 @app.route('/api/wiki', methods=['GET','POST'])
 def wikipedia():
 	if request.args.get('q'):
