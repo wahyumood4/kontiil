@@ -1,171 +1,484 @@
-<html>
-    <title>wahyu mood APIs </title>
-    <meta name="description" content="MhankBarBar APIs Documentation.">
-<style>
-table, th, td {border: 1px solid blue; padding: 5px;}
+<!DOCTYPE html>
+<html lang="en">
 
-table {border-collapse: collapse;}
-
-th.eg1 {width: 21%;}
-
-th.eg2 {width: 30%;}
-
-th.eg4 {width: 5%;}
-
-th.eg3 {width: 5%;}
-</style>
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-</style>
-<style>
-.hidden {
-	vissibilty: hidden;
-}
-</style>
 <head>
-        <base href="https://wahyugans.herokuapp.com" >
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://absennurisku.000webhostapp.com/css/img/logo/logo.png" rel="icon">
+  <title>wahyu api</title>
+  <link href="https://absennurisku.000webhostapp.com/css/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://absennurisku.000webhostapp.com/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="https://absennurisku.000webhostapp.com/css/css/ruang-admin.min.css" rel="stylesheet">
 </head>
-  <audio>
-          <source src="/static", filename="Best.mp3">
-  </audio>
-  <body style="background-color: white" class="is-preload" id="div_root">
-  <h1 align="center">wahyu mood APIs</h1>
-  <div align=center id="findipwidget"></div><div class="findiplink" id="findipurl">Powered by <a href="http://www.find-ip.net/" target="_blank">Find-IP.net</a></div><script defer src="//api.find-ip.net/widget.js?width=240&bg=transparent&border=transparent&city=0&language=0&system=0&textcol=black&"></script>
-  <!-- <p align="center"><iframe src="http://free.timeanddate.com/clock/i72228t0/n108/tlid38/ftb/tt0/ta1/tb1" frameborder="0" width="267" height="19" allowTransparency="true"></iframe></p> -->
-    <table>
-      <tr>
-        <th class="eg1">API</th>
-        <th class="eg2">Description</th>
-        <th class="eg4">Parameter</th>
-        <th class="eg3">Usage</th>
-      </tr>
-     <tr>
-        <td bgcolor="green">Instagram Image/Video Downloader</td>
-        <td>Mengambil Link download dari link post Instagram.</td>
-        <td>url</td>
-        <td><a href="/api/ig?url=https://www.instagram.com/p/CFoVkHlFP3n/?igshid=sz6giw37qp9f">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="yellow">Instagram Stalker</td>
-        <td>Menampilkan jumlah foll, jumlah post, bio, dll dari akun Instagram.</td>
-        <td>username</td>
-        <td><a href="/api/stalk?username=duar_amjay">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="green">YouTube Audio Downloader</td>
-        <td>Mengambil Link download dari link YouTube.</td>
-        <td>url</td>
-        <td><a href="/api/yta?url=https://youtu.be/6l5V3BWDcMw">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="yellow">YouTube Video Downloader</td>
-        <td>Mengambil Link download dari link YouTube.</td>
-        <td>url</td>
-        <td><a href="/api/ytv?url=https://youtu.be/6l5V3BWDcMw">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="green">Jadwal Sholat sesuai Daerah</td>
-        <td>Mengambil Jadwal Sholat sesuai Daerah. Untuk melihat daerah-daerah yang tersedia, <a href="/daerah">lihat disini</a>.</td>
-        <td>daerah</td>
-        <td><a href="/api/jadwalshalat?daerah=Tangerang">Example</a></td>
-      </tr>
-      <tr>
-      	<td bgcolor="yellow">Informasi Cuaca</td>
-      	<td>Mengambil informasi cuaca sesuai tempat/daerah/lokasi.</td>
-      	<td>q</td>
-      	<td><a href="/api/cuaca?q=Tangerang">Example</a></td>
-      </tr>
-        <td bgcolor="green">Random Quotes</td>
-        <td>Mengambil kutipan kutipan dari tokoh-tokoh dunia.</td>
-        <td>-</td>
-        <td><a href="/api/randomquotes">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="yellow">Random Anime Quotes</td>
-        <td>Mengambil kutipan kutipan dari tokoh-tokoh anime.</td>
-        <td>-</td>
-        <td><a href="/api/quotesnime/random">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="green">Wikipedia.</td>
-        <td>Mencari apapun yang ada di wikipedia.</td>
-        <td>q</td>
-        <td><a href="/api/wiki?q=asu">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="yellow">Random Waifu</td>
-        <td>Mengambil Random Waifu dari mywaifulist.moe</td>
-        <td>-</td>
-        <td><a href="/api/waifu">Example</a></td>
-      </tr>
-      <tr>
-      <tr>
-      	<td bgcolor="green">Info Gempa</td>
-      	<td>Mengambil data gempa dari bmkg</td>
-      	<td>-</td>
-      	<td><a href="/api/infogempa">Example</a></td>
-      </tr>
-        <td bgcolor="yellow">Random Nekonime</td>
-        <td>Mengambil Random Nekonime</td>
-        <td>-</td>
-        <td><a href="/api/nekonime">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="green">Search Chord Guitar</td>
-        <td>Mencari chord gitar dari chordindonesia.com.</td>
-        <td>q</td>
-        <td><a href="/api/chord?q=aku+bukan+boneka">Example</a></td>
-      </tr>
-      <tr>
-        <td bgcolor="yellow">Dewabatch scraper</td>
-        <td>Mencari info anime dari website dewabatch.com</td>
-        <td>q</td>
-        <td><a href="/api/dewabatch?q=darling+in+the+franxx">Example</a></td>
-      </tr>
-      <tr>
-      	<td bgcolor="green">Kusonime scraper</td>
-      	<td>Mencari info anime dari website kusonime.com</td>
-      	<td>q</td>
-      	<td><a href="/api/kuso?q=kanojo+okarishimasu">Example</a></td>
-      </tr>
-      <tr>
-      	<td bgcolor="yellow">Otakudesu scraper</td>
-      	<td>Mencari info anime dari website otakudesu.tv</td>
-      	<td>q</td>
-      	<td><a href="/api/otakudesu?q=kanojo+okarishimasu">Example</a></td>
-   	  </tr>
-   	  <tr>
-   	  	<td bgcolor="green">Spam es em es</td>
-   	  	<td>Mengirim spam OTP sms</td>
-   	  	<td>no&jum</td>
-   	  	<td><a href="/api/spamsms?no=085812345678&jum=3">Example</a></td>
-   	  </tr>
-   	  <tr>
-   	  	<td bgcolor="yellow">Komiku scraper</td>
-   	  	<td>Mencari info manga dari website komiku.co.id</td>
-   	  	<td>q</td>
-   	  	<td><a href="/api/komiku?q=kanojo+okarishimasu">Example</a></td>
-   	  </tr>
-   	  <tr>
-   	  	<td bgcolor="green">Spam call</td>
-   	  	<td>Mengirim spam OTP call</td>
-   	  	<td>no</td>
-   	  	<td><a href="/api/spamcall?no=85671568291">Example</a></td>
-   	  </tr>
-      <!--<tr>
-      	<td bgcolor="green">Brainly scraper</td>
-      	<td>Mencari apapun di brainly</td>
-      	<td>q</td>
-      	<td><a href="/api/brainly?q=asw">Example</a></td>
-      </tr>-->
-    </table>
-   
-    <p align="center">© 2020 <a href="https://www.instagram.com/_wah_ramadan/">wahyumood</a>.</p>
-  </body>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <div class="sidebar-brand-text mx-3">wahyu api's</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/api">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Beranda</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#base"
+          aria-expanded="true" aria-controls="base">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>SOSIAL MEDIA</span>
+        </a>
+        <div id="base" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Online Tools ( APi's )</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/igstalk?uname=_wah_ramadan">Ig stalk</a>
+            <a class="collapse-item" href="http://wahyugans.herokuapp.com/api/ytmusik?url=https://www.youtube.com/watch?v=e1--y6LoC3k">Yt audio</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/ytvideo?url=https://www.youtube.com/watch?v=e1--y6LoC3k">Yt video</a>
+			<a class="collapse-item" href="https://api.arugaz.my.id/api/media/facebook?url=https://www.facebook.com/watch/?v=1393572814172251">Facebook</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/tiktod?link=https://www.tiktok.com/@graciajessicajane/video/6910824586909076738">Tiktok</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/twtimage?url=https://twitter.com/renaldypjs/status/1343516524934438912">twt-images</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/twtvid?url=https://twitter.com/weareoneEXO/status/1344811074864914433">twt-video</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#mager"
+          aria-expanded="true" aria-controls="mager">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>MAGER</span>
+        </a>
+        <div id="mager" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Online Tools ( APi's )</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nulis?kata=wahyu">Nulis</a>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/kbbi?kata=wahyu">KBBI</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/wiki?q=wahyu">Wiki</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/translate?kata=jancok">translate</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#finder"
+          aria-expanded="true" aria-controls="finder">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>FINDER</span>
+        </a>
+        <div id="finder" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Information Finder</h6>
+            <a class="collapse-item" href="/doc/lirik">Lyrics Finder</a>
+			<a class="collapse-item" href="/doc/covid19">Cord</a>
+			
+
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#nsfw"
+          aria-expanded="true" aria-controls="nsfw">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>NSFW</span>
+        </a>
+        <div id="nsfw" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">NSFW Finder</h6>
+            <a class="collapse-item" href="/doc/ph">xnxx Scraper</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nekopoi?url=https://nekopoi.care/tsunpuri-episode-1-subtitle-indonesia">Nekopoi Scraper</a>
+			<a class="collapse-item" href="/doc/randomp">Random NSFW</a>
+			<a class="collapse-item" href="/doc/randomh">Random Hentai</a>
+			<a class="collapse-item" href="/doc/nhentai">Nhentai Finder</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#info"
+          aria-expanded="true" aria-controls="info">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>News</span>
+        </a>
+        <div id="info" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Info Finder</h6>
+            <a class="collapse-item" href="https://rest.farzain.com/api/cuaca.php?id=jember&apikey=O8mUD3YrHIy9KM1fMRjamw8eg">Cuaca</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/infogempa">Gempa</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=indonesia">Covid-id</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=amerika">Covid-county</a>
+
+          </div>
+        </div>
+      </li>
+	  
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#utils"
+          aria-expanded="true" aria-controls="utils">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Utils</span>
+        </a>
+        <div id="utils" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Random API</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/namaninja?nama=wahyu">Nama jepang</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/bpk?text=wahyu">bpkfont</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#utils"
+          aria-expanded="true" aria-controls="utils">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Other</span>
+        </a>
+        <div id="utils" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Other API</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/artimimpi?mimpi=mati">Artinama</a>	
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/zodiak?tgl-bln-thn=30-10-2003">Zodiak</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/simi?text=wahyu">simi</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #0;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <span class="badge badge-warning badge-counter">2</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <h7>Contact Form Email</h7>
+				<form action="kirim.php" method="post">
+					<p><input type="text" name="nama" placeholder="Nama anda" size="30" required /></p>
+					<p><input type="email" name="email" placeholder="Email valid" size="30" required /></p>
+					<p><input type="text" name="judul" placeholder="Subjek pesan email" size="50" required /></p>
+					<p><textarea name="pesan" placeholder="Pesan anda" rows="7" cols="50" required></textarea>
+					<p><input type="submit" name="kirim" value="Kirim Pesan" /> <input type="reset" value="Hapus Text" /></p>
+				</form>
+	
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-tasks fa-fw"></i>
+                <span class="badge badge-success badge-counter">3</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Task
+                </h6>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Design Button
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Make Beautiful Transitions
+                      <div class="small float-right"><b>30%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Create Pie Chart
+                      <div class="small float-right"><b>75%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
+              </div>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./api">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span>Since last month</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                        <span>Since last years</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- New User Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
+                      <div id='BanyakPengunjung' class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
+                        <span>Since last month</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-info"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                        <span>Since yesterday</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
+<script language="JavaScript">
+var text="memang<br><br>DIRIKU HANYALAH SEORANG MANUSIA BIASA<br>TAPI AKU BERUSAHA MENJADI LEBIH BAIK <br>WALAU SERING GAGAL AKU TAKPERNAH MENYERAH<br>DAN<br>MAAF, KARENA SERING DIEMIN KAMU<br>SERING NYUEKIN KAMU<br>SEBENARNYA AKU NYUEKIN KAMU AKU PUNYA ALASAN<br>TAPI, KAMU PASTI TIDAK AKAN PERCAYA<br>NAMUN, BEBAN INI SANGATLAH MENYIKSA <br>TIDAK APA AKU MASIH BISA MENAHANNYA, TAPI TIDAK SELAMANYA<br>JADI, AKU MOHON MENGERTI POSISIKU SAAT INI <br>REMEMBER BACKHAT!!!...";
+var delay=60;
+var currentChar=1;
+var destination="[none]";
+function type()
+{
+//if (document.all)
+{
+var dest=document.getElementById(destination);
+if (dest)// && dest.innerHTML)
+{
+dest.innerHTML=text.substr(0, currentChar)+"<blink>_</blink>";
+currentChar++;
+if (currentChar>text.length)
+{
+currentChar=1;
+setTimeout("type()", 7000);
+}
+else
+{
+setTimeout("type()", delay);
+}
+}
+}
+}
+function startTyping(textParam, delayParam, destinationParam)
+{
+text=textParam;
+delay=delayParam;
+currentChar=1;
+destination=destinationParam;
+type();
+}
+</script> <b><div 0px="" 10px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></b> <script language="JavaScript">
+javascript:startTyping(text, 50, "textDestination");
+</script>
+
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; 2021 - developed by
+              <b><a href="https://instagram.com/_wah_ramadan" target="_blank">wahyu mood</a></b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="https://absennurisku.000webhostapp.com/css/vendor/jquery/jquery.min.js"></script>
+  <script src="https://absennurisku.000webhostapp.com/css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://absennurisku.000webhostapp.com/css/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://absennurisku.000webhostapp.com/css/js/ruang-admin.js"></script>
+  <script src="https://absennurisku.000webhostapp.com/css/vendor/chart.js/Chart.min.js"></script>
+  <script src="https://absennurisku.000webhostapp.com/css/js/demo/chart-area-demo.js"></script>  
+</body>
 
 </html>
