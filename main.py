@@ -69,7 +69,7 @@ def layer():
 
 @app.route('/api/igstalk', methods=['GET','POST'])
 def igstalk():
-	if request.args.get('unamme'):
+	if request.args.get('uname'):
 		try:
 			tak = request.args.get('uname')
 			url = f'https://freerestapi.herokuapp.com/api/v1/igs?u={tak}'
