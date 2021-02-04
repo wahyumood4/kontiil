@@ -64,6 +64,28 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+@app.route('/api/artmimpi', methods=['GET','POST'])
+def mimpi():
+	if request.args.get('mimpi'):
+		try:
+			tak = request.args.get('mimpi')
+			url = f'https://api.arugaz.my.id/api/primbon/tafsirmimpi?mimpi={tak}'
+			kata = get(url).json()
+			return {
+				'desc': kata['result']['hasil'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter mimpi'
+		}
+	
 @app.route('/api/nekopoi', methods=['GET','POST'])
 def nekopoi():
 	if request.args.get('url'):
