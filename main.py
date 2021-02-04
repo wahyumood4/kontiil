@@ -87,7 +87,104 @@ def animeinfo():
 			'status': False,
 			'msg': '[!] Masukkan parameter query'
 		}
+@app.route('/api/cord', methods=['GET','POST'])
+def cord():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://alfians-api.herokuapp.com/api/chord?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
 
+	
+@app.route('/api/jadwaltv', methods=['GET','POST'])
+def jadwaltv():
+	if request.args.get('ch'):
+		try:
+			tak = request.args.get('ch')
+			url = f'https://docs-jojo.herokuapp.com/api/jadwaltv?ch={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter ch'
+		}
+@app.route('/api/merkhp', methods=['GET','POST'])
+def merkhp():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://docs-jojo.herokuapp.com/api/gsm_arena?q={tak}'
+			kata = get(url).json()
+			return {
+				'title': kata['title'],
+				'released': kata['released'],
+				'img': kata['img'],
+				'weight': kata['weight'],
+				'os_version': kata['os_version'],
+				'storage': kata['storage'],
+				'display_size': kata['display_size'],
+				'display_resolution': kata['display_resolution'],
+				'camera_pixel': kata['camera_pixel'],
+				'video_pixel': kata['video_pixel'],
+				'ram': kata['ram'],
+				'battery': kata['battery'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
+@app.route('/api/ttp', methods=['GET','POST'])
+def ttp():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://st4rz.herokuapp.com/api/ttp?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}
+	
 @app.route('/api/simi', methods=['GET','POST'])
 def simi():
 	if request.args.get('text'):
