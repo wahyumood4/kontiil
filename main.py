@@ -66,6 +66,28 @@ def layer():
 		}
 
 
+
+@app.route('/api/igstalk', methods=['GET','POST'])
+def igstalk():
+	if request.args.get('unamme'):
+		try:
+			tak = request.args.get('uname')
+			url = f'https://freerestapi.herokuapp.com/api/v1/igs?u={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['data'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter uname'
+		}		
 @app.route('/api/zodiak', methods=['GET','POST'])
 def zodiak():
 	if request.args.get('tgl-bln-thn'):
