@@ -72,10 +72,10 @@ def nekopoi():
 			url = f'https://api.arugaz.my.id/api/anime/nekopoi/detail?url={tak}'
 			kata = get(url).json()
 			return {
-				'hasil': kata['title'],
-				'hasil': kata['desc'],
-				'hasil': kata['links'],
-				'status': kata['status'],	
+				'judul': kata['title'],
+				'desc': kata['desc'],
+				'link': kata['links'],
+				'status': 200,	
 			}
 		except:
 			return {
