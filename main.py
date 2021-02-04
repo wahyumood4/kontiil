@@ -750,44 +750,25 @@ def igeh():
 
 @app.route('/api/cuaca', methods=['GET','POST'])
 def cuaca():
-	if request.args.get('q'):
+	if request.args.get('kota'):
 		try:
-			q = request.args.get('q')
-			print(q)
-			url = f'https://rest.farzain.com/api/cuaca.php?id={q}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
-			weather = get(f'{url}{apiKey}').json()
-			print(weather)
-			if weather['respon']['deskripsi'] == 'null' or weather['respon']['deskripsi'] == None:
-				return {
-					'status': 404,
-					'error': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
-				}
-			else:
-				return {
-					'status': 200,
-					'result': {
-						'tempat': weather['respon']['tempat'],
-						'cuaca': weather['respon']['cuaca'],
-						'desk': weather['respon']['deskripsi'],
-						'suhu': weather['respon']['suhu'],
-						'kelembapan': weather['respon']['kelembapan'],
-						'udara': weather['respon']['udara'],
-						'angin': weather['respon']['angin']
-					},
-					'creator': 'Mhank BarBar'
-				}
-		except Exception as e:
-			print('Error : %s' % e)
+			tak = request.args.get('kota')
+			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
+			kata = get(url).json()
+			return {
+				'result': kata['respon'],
+				'status': 200,	
+			}
+		except:
 			return {
 				'status': False,
-				'msg': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
+				'error': '[❗] eror'
 			}
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter q'
-		}
-
+			'msg': '[!] Masukkan parameter kota'
+		}			
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
 	if request.args.get('username'):
