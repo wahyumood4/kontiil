@@ -68,9 +68,9 @@ def layer():
 
 @app.route('/api/lirik', methods=['GET','POST'])
 def lirik():
-	if request.args.get('lagu'):
+	if request.args.get('judul'):
 		try:
-			tak = request.args.get('lagu')
+			tak = request.args.get('judul')
 			url = f'https://scrap.terhambar.com/lirik?word={tak}'
 			kata = get(url).json()
 			return {
@@ -85,9 +85,8 @@ def lirik():
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter lagu'
-		}
-	
+			'msg': '[!] Masukkan parameter judul'
+		}		
 @app.route('/api/igstalk', methods=['GET','POST'])
 def igstalk():
 	if request.args.get('uname'):
