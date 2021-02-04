@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/api">
         <div class="sidebar-brand-text mx-3">wahyu api's</div>
       </a>
       <hr class="sidebar-divider my-0">
@@ -76,8 +76,25 @@
         <div id="finder" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Information Finder</h6>
-            <a class="collapse-item" href="/doc/lirik">Lyrics Finder</a>
-			<a class="collapse-item" href="/doc/covid19">Cord</a>
+            <a class="collapse-item" href="http://wahyugans.herokuapp.com/api/lirik?judul=anjai">Lyrics Finder</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/cord?query=anjai">Cord</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/ttp?text=wahyu">Ttp</a>
+			
+
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#anime"
+          aria-expanded="true" aria-controls="anime">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>ANIME</span>
+        </a>
+        <div id="finder" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Information anime</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/animeinfo?query=naruto">anime info</a>
+
 			
 
           </div>
@@ -92,11 +109,9 @@
         <div id="nsfw" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">NSFW Finder</h6>
-            <a class="collapse-item" href="/doc/ph">xnxx Scraper</a>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/xnxx?url=">xnxx Scraper</a>
 			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nekopoi?url=https://nekopoi.care/tsunpuri-episode-1-subtitle-indonesia">Nekopoi Scraper</a>
-			<a class="collapse-item" href="/doc/randomp">Random NSFW</a>
-			<a class="collapse-item" href="/doc/randomh">Random Hentai</a>
-			<a class="collapse-item" href="/doc/nhentai">Nhentai Finder</a>
+			<a class="collapse-item" href="https://wazzapi.herokuapp.com/api/v1/randomh">Random Hentai</a>
           </div>
         </div>
       </li>
@@ -113,6 +128,7 @@
 			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/infogempa">Gempa</a>
 			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=indonesia">Covid-id</a>
 			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=amerika">Covid-county</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/jadwaltv?ch=gtv">Jadwal tv</a>
 
           </div>
         </div>
@@ -144,15 +160,11 @@
             <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/artimimpi?mimpi=mati">Artinama</a>	
 			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/zodiak?tgl-bln-thn=30-10-2003">Zodiak</a>
 			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/simi?text=wahyu">simi</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/merkhp?query=asus">merk HP</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>About</span>
-        </a>
-      </li>
+      
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
     </ul>
@@ -168,7 +180,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
+                <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3L2YkydPYUg9VqTYe_x7y-g1NaCsDX75W2A&usqp=CAU" style="max-width: 50px">
               </a>
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                 aria-labelledby="searchDropdown">
@@ -185,57 +197,11 @@
                 </form>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+            
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
+                <img class="img-profile rounded-circle" src="https://images.vexels.com/media/users/3/140137/isolated/preview/d5ce03b9b26818e8020ad0972de98baa-email-round-icon-by-vexels.png" style="max-width: 50px">
                 <span class="badge badge-warning badge-counter">2</span>
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -254,53 +220,7 @@
 	
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-tasks fa-fw"></i>
-                <span class="badge badge-success badge-counter">3</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Task
-                </h6>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Design Button
-                      <div class="small float-right"><b>50%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Make Beautiful Transitions
-                      <div class="small float-right"><b>30%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Create Pie Chart
-                      <div class="small float-right"><b>75%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
-              </div>
-            </li>
+            
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -331,85 +251,13 @@
 
           <div class="row mb-3">
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span>Since last month</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-primary"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <!-- Earnings (Annual) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                        <span>Since last years</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <!-- New User Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
-                      <div id='BanyakPengunjung' class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                        <span>Since last month</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-info"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                        <span>Since yesterday</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-warning"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
  
 <script language="JavaScript">
 var text="memang<br><br>DIRIKU HANYALAH SEORANG MANUSIA BIASA<br>TAPI AKU BERUSAHA MENJADI LEBIH BAIK <br>WALAU SERING GAGAL AKU TAKPERNAH MENYERAH<br>DAN<br>MAAF, KARENA SERING DIEMIN KAMU<br>SERING NYUEKIN KAMU<br>SEBENARNYA AKU NYUEKIN KAMU AKU PUNYA ALASAN<br>TAPI, KAMU PASTI TIDAK AKAN PERCAYA<br>NAMUN, BEBAN INI SANGATLAH MENYIKSA <br>TIDAK APA AKU MASIH BISA MENAHANNYA, TAPI TIDAK SELAMANYA<br>JADI, AKU MOHON MENGERTI POSISIKU SAAT INI <br>REMEMBER BACKHAT!!!...";
