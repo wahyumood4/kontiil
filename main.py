@@ -74,6 +74,7 @@ def animeinfo():
 			return {
 				'result': kata['result'],
 				'thumb': kata['thumb'],
+				'desc': kata['sinopsis'],
 				'status': 200,	
 			}
 		except:
