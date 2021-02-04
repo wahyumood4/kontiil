@@ -72,7 +72,7 @@ def corona():
 			url = f'https://api.arugaz.my.id/api/edu/corona?country={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['result'],
+				'result': kata['results'],
 				'status': 200,	
 			}
 		except:
