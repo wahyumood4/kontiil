@@ -753,8 +753,8 @@ def cuaca():
 	if request.args.get('q'):
 		try:
 			tak = request.args.get('q')
-			api = '&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
-			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}{api}'
+		
+			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
 			kata = get(url).json()
 			return {
 				'result': kata['respon'],
