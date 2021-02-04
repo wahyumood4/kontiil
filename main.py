@@ -65,6 +65,27 @@ def layer():
 			'msg': '[!] Masukkan parameter base64image'
 		}
 
+@app.route('/api/simi', methods=['GET','POST'])
+def simi():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://st4rz.herokuapp.com/api/simsimi?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}
 
 @app.route('/api/bpk', methods=['GET','POST'])
 def bpk():
