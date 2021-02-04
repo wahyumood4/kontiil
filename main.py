@@ -768,7 +768,7 @@ def fb():
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter kota'
+			'msg': '[!] Masukkan parameter url'
 		}			
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
