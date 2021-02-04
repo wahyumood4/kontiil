@@ -65,7 +65,28 @@ def layer():
 			'msg': '[!] Masukkan parameter base64image'
 		}
 
-
+@app.route('/api/namaninja', methods=['GET','POST'])
+def namaninja():
+	if request.args.get('nama'):
+		try:
+			tak = request.args.get('mana')
+			url = f'https://api.terhambar.com/ninja?nama={tak}'
+			kata = get(url).json()
+			return {
+				'hasil': kata['result']['ninja'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter nama'
+		}		
+	
 @app.route('/api/nulis', methods=['GET','POST'])
 def nulis():
 	if request.args.get('kata'):
