@@ -71,7 +71,7 @@ def quotes():
 	if request.args.get('q'):
 		try:
 			tak = request.args.get('q')
-			url = f'https://api.terhambar.com/qts/'
+			url = f'https://api.terhambar.com/qts/{tak}'
 			kata = get(url).json()
 			return {
 				'result': kata['quotes'],
