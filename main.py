@@ -748,16 +748,16 @@ def igeh():
 			'msg': '[!] Masukkan parameter url'
 		}
 
-@app.route('/api/cuaca', methods=['GET','POST'])
-def cuaca():
-	if request.args.get('q'):
+@app.route('/api/fb', methods=['GET','POST'])
+def fb():
+	if request.args.get('url'):
 		try:
-			tak = request.args.get('q')
+			tak = request.args.get('url')
 		
-			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
+			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['respon'],
+				'result': kata['result'],
 				'status': 200,	
 			}
 		except:
