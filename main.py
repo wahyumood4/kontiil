@@ -66,6 +66,20 @@ def layer():
 		}
 
 
+@app.route('/api/quotes', methods=['GET','POST'])
+def quotes():
+		try:
+			url = f'https://api.terhambar.com/qts/'
+			kata = get(url).json()
+			return {
+				'result': kata['quotes'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}		
 @app.route('/api/lirik', methods=['GET','POST'])
 def lirik():
 	if request.args.get('judul'):
