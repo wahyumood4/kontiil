@@ -64,15 +64,18 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
-@app.route('/api/wiki', methods=['GET','POST'])
-def wiki():
-	if request.args.get('kata'):
+@app.route('/api/nekopoi', methods=['GET','POST'])
+def nekopoi():
+	if request.args.get('url'):
 		try:
 			tak = request.args.get('kata')
-			url = f'https://api.arugaz.my.id/api/edu/idwiki?query={tak}'
+			url = f'https://api.arugaz.my.id/api/anime/nekopoi/detail?url={tak}'
 			kata = get(url).json()
 			return {
-				'hasil': kata['results']['pages']['extract'],'status': kata['status'],	
+				'hasil': kata['title'],
+				'hasil': kata['desc'],
+				'hasil': kata['links'],
+				'status': kata['status'],	
 			}
 		except:
 			return {
@@ -82,7 +85,7 @@ def wiki():
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter kata'
+			'msg': '[!] Masukkan parameter url'
 		}
 @app.route('/api/spamgmail', methods=['GET','POST'])
 def spamgimel():
