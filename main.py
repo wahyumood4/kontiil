@@ -64,6 +64,28 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+@app.route('/api/animeinfo', methods=['GET','POST'])
+def animeinfo():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://arugaz.herokuapp.com/api/dewabatch?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'thumb': kata['thumb'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
 
 @app.route('/api/simi', methods=['GET','POST'])
 def simi():
