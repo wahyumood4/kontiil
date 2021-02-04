@@ -69,7 +69,7 @@ def layer():
 def namaninja():
 	if request.args.get('nama'):
 		try:
-			tak = request.args.get('mana')
+			tak = request.args.get('nama')
 			url = f'https://api.terhambar.com/ninja?nama={tak}'
 			kata = get(url).json()
 			return {
