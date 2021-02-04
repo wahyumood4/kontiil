@@ -64,7 +64,27 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
-
+@app.route('/api/corona', methods=['GET','POST'])
+def corona():
+	if request.args.get('negara'):
+		try:
+			tak = request.args.get('negara')
+			url = f'https://api.arugaz.my.id/api/edu/corona?country={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter negara'
+		}
 @app.route('/api/xnxx', methods=['GET','POST'])
 def xnxx():
 	if request.args.get('url'):
@@ -84,7 +104,7 @@ def xnxx():
 	else:
 		return {
 			'status': False,
-			'msg': '[!] Masukkan parameter mimpi'
+			'msg': '[!] Masukkan parameter url'
 		}
 @app.route('/api/artimimpi', methods=['GET','POST'])
 def mimpi():
