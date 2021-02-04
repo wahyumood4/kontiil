@@ -68,7 +68,7 @@ def layer():
 def nekopoi():
 	if request.args.get('url'):
 		try:
-			tak = request.args.get('kata')
+			tak = request.args.get('url')
 			url = f'https://api.arugaz.my.id/api/anime/nekopoi/detail?url={tak}'
 			kata = get(url).json()
 			return {
