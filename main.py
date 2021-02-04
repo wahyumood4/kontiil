@@ -64,6 +64,29 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+
+@app.route('/api/ytvideo', methods=['GET','POST'])
+def ytvideo():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/ytvid?url={tak}'
+			kata = get(url).json()
+			return {
+				'judul': kata['titleInfo'],
+				'video': kata['getVideo'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}	
 @app.route('/api/translate', methods=['GET','POST'])
 def translate():
 	if request.args.get('kata'):
