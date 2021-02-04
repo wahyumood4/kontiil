@@ -750,10 +750,11 @@ def igeh():
 
 @app.route('/api/cuaca', methods=['GET','POST'])
 def cuaca():
-	if request.args.get('kota'):
+	if request.args.get('q'):
 		try:
-			tak = request.args.get('kota')
-			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
+			tak = request.args.get('q')
+			api = '&apikey=O8mUD3YrHIy9KM1fMRjamw8eg'
+			url = f'https://rest.farzain.com/api/cuaca.php?id={tak}{api}'
 			kata = get(url).json()
 			return {
 				'result': kata['respon'],
