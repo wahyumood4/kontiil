@@ -64,6 +64,27 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+@app.route('/api/translate', methods=['GET','POST'])
+def translate():
+	if request.args.get('kata'):
+		try:
+			tak = request.args.get('kata')
+			url = f'https://api.arugaz.my.id/api/edu/translate?lang=en&text={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['text'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter kata'
+		}
 @app.route('/api/corona', methods=['GET','POST'])
 def corona():
 	if request.args.get('negara'):
