@@ -67,7 +67,10 @@ def layer():
 
 
 @app.route('/api/quotes', methods=['GET','POST'])
-
+def quotes():
+	if request.args.get('q'):
+		try:
+			tak = request.args.get('q')
 		try:
 			url = f'https://api.terhambar.com/qts/'
 			kata = get(url).json()
