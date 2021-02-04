@@ -82,7 +82,12 @@ def quotes():
 			return {
 				'status': False,
 				'error': '[❗] eror'
-			}		
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter judul'
+		}		
 @app.route('/api/lirik', methods=['GET','POST'])
 def lirik():
 	if request.args.get('judul'):
