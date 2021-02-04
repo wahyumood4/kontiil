@@ -1,4 +1,4 @@
-#from lib.pytube import YouTube
+from lib.pytube import YouTube
 from lib.dewa import cari
 from lib.anime import *
 from lib.brainly import *
@@ -66,7 +66,28 @@ def layer():
 		}
 
 
-
+@app.route('/api/lirik', methods=['GET','POST'])
+def lirik():
+	if request.args.get('lagu'):
+		try:
+			tak = request.args.get('lagu')
+			url = f'https://scrap.terhambar.com/lirik?word={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter lagu'
+		}
+	
 @app.route('/api/igstalk', methods=['GET','POST'])
 def igstalk():
 	if request.args.get('uname'):
