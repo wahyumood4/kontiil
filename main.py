@@ -64,6 +64,50 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+
+
+@app.route('/api/twtimage', methods=['GET','POST'])
+def twtimage():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/twimg?url={tak}'
+			kata = get(url).json()
+			return {
+				'video': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}			
+@app.route('/api/twtvid', methods=['GET','POST'])
+def ytvid():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/twvid?url={tak}'
+			kata = get(url).json()
+			return {
+				'video': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}		
 @app.route('/api/ytmusik', methods=['GET','POST'])
 def ytmusik():
 	if request.args.get('url'):
