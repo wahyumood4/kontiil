@@ -66,7 +66,27 @@ def layer():
 		}
 
 
-		
+@app.route('/api/bpk', methods=['GET','POST'])
+def bpk():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://arugaz.herokuapp.com/api/bapakfont?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}			
 @app.route('/api/lirik', methods=['GET','POST'])
 def lirik():
 	if request.args.get('judul'):
