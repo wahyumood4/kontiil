@@ -64,7 +64,7 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
-@app.route('/api/artmimpi', methods=['GET','POST'])
+@app.route('/api/artimimpi', methods=['GET','POST'])
 def mimpi():
 	if request.args.get('mimpi'):
 		try:
