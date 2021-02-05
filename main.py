@@ -957,35 +957,20 @@ def nekonimek():
 			'result': nimek
 		}
 
-@app.route('/api/nekonime', methods=['GET','POST'])
-def nekonimek():
+@app.route('/api/world', methods=['GET','POST'])
+def world():
 	try:
 		neko = get('https://api.terhambar.com/negara/World').json()
-		total = neko['total']
-		meninggal = neko['meninggal']
-		sembuh = neko['sembuh']
-		penanganan = neko['penanganan']
 		return {
 			'status': 200,
-			'total': total,
-			'meninggal': meninggal,
-			'sembuh': sembuh,
-			'penanganan': penanganan,
-			'total': total
+			'result': neko
 		}
 	except:
 		neko = get('https://api.terhambar.com/negara/World').json()
-		total = neko['total']
-		meninggal = neko['meninggal']
-		sembuh = neko['sembuh']
-		penanganan = neko['penanganan']
 		return {
 			'status': 200,
-			'total': total,
-			'meninggal': meninggal,
-			'sembuh': sembuh,
-			'penanganan': penanganan,
-			'total': total
+			'result': neko
+			
 		}
 
 @app.route('/api/ig', methods=['GET','POST'])
