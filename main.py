@@ -1205,6 +1205,9 @@ def quotesnimerandom():
 @app.route('/api', methods=['GET','POST'])
 def api():
 	return render_template('api.html')
+@app.route('/kirim', methods=['GET','POST'])
+def kirim():
+	return render_template('kirim.php')
 
 @app.route('/', methods=['GET','POST'])
 def index():
