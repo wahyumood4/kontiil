@@ -960,8 +960,8 @@ def nekonimek():
 @app.route('/api/randomloli', methods=['GET','POST'])
 def randomloli():
 	try:
-		hehe = ['kawaii','neko']
-		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		
+		loli = get('https://api.fdci.se/rep.php?gambar=loli).json()['url']
 		return {
 			'status': 200,
 			'result': loli
