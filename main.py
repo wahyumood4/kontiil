@@ -957,20 +957,37 @@ def nekonimek():
 			'result': nimek
 		}
 
-@app.route('/api/randomloli', methods=['GET','POST'])
-def randomloli():
+@app.route('/api/nekonime', methods=['GET','POST'])
+def nekonimek():
 	try:
-		
-		loli = get('https://api.fdci.se/rep.php?gambar=loli).json()['url']
+		neko = get('https://api.terhambar.com/negara/World').json()
+		total = neko['total']
+		meninggal = neko['meninggal']
+		sembuh = neko['sembuh']
+		penanganan = neko['penanganan']
 		return {
 			'status': 200,
-			'result': loli
+			'total': total,
+			'meninggal': meninggal,
+			'sembuh': sembuh,
+			'penanganan': penanganan,
+			'total': total
 		}
 	except:
+		neko = get('https://api.terhambar.com/negara/World').json()
+		total = neko['total']
+		meninggal = neko['meninggal']
+		sembuh = neko['sembuh']
+		penanganan = neko['penanganan']
 		return {
 			'status': 200,
-			'result': loli
+			'total': total,
+			'meninggal': meninggal,
+			'sembuh': sembuh,
+			'penanganan': penanganan,
+			'total': total
 		}
+
 @app.route('/api/ig', methods=['GET','POST'])
 def igeh():
 	if request.args.get('url'):
