@@ -105,7 +105,27 @@ def animeinfo():
 			'msg': '[!] Masukkan parameter query'
 		}
 
-
+@app.route('/api/fb', methods=['GET','POST'])
+def fb():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://arugaz.herokuapp.com/api/dewabatch?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata,
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
 			
 @app.route('/api/cord', methods=['GET','POST'])
 def cord():
@@ -411,7 +431,7 @@ def ytmusik():
 			return {
 				'judul': kata['titleInfo'],
 				'images': kata['getImages'],
-				'video': kata['getAudio'],
+				'mp3': kata['getAudio'],
 				'status': 200,	
 			}
 		except:
