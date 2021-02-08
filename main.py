@@ -996,27 +996,7 @@ def animeinfo():
 			'status': False,
 			'msg': '[!] Masukkan parameter query'
 		}
-@app.route('/api/igdl', methods=['GET','POST'])
-def igigdl():
-	if request.args.get('url'):
-		try:
-			tak = request.args.get('url')
-			url = f'https://st4rz.herokuapp.com/api/ig?url={tak}'
-			kata = get(url).json()
-			return {
-				'result': kata['result'],
-				'status': 200,	
-			}
-		except:
-			return {
-				'status': False,
-				'error': '[❗] eror'
-			}
-	else:
-		return {
-			'status': False,
-			'msg': '[!] Masukkan parameter url'
-		}
+
 
 @app.route('/api/fb', methods=['GET','POST'])
 def fb():
