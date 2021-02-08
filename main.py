@@ -64,6 +64,453 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+@app.route('/api/cord', methods=['GET','POST'])
+def cord():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://alfians-api.herokuapp.com/api/chord?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
+
+	
+@app.route('/api/jadwaltv', methods=['GET','POST'])
+def jadwaltv():
+	if request.args.get('ch'):
+		try:
+			tak = request.args.get('ch')
+			url = f'https://docs-jojo.herokuapp.com/api/jadwaltv?ch={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter ch'
+		}
+@app.route('/api/merkhp', methods=['GET','POST'])
+def merkhp():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://docs-jojo.herokuapp.com/api/gsm_arena?q={tak}'
+			kata = get(url).json()
+			return {
+				'title': kata['title'],
+				'released': kata['released'],
+				'img': kata['img'],
+				'weight': kata['weight'],
+				'os_version': kata['os_version'],
+				'storage': kata['storage'],
+				'display_size': kata['display_size'],
+				'display_resolution': kata['display_resolution'],
+				'camera_pixel': kata['camera_pixel'],
+				'video_pixel': kata['video_pixel'],
+				'ram': kata['ram'],
+				'battery': kata['battery'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
+@app.route('/api/ttp', methods=['GET','POST'])
+def ttp():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://st4rz.herokuapp.com/api/ttp?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}
+	
+@app.route('/api/simi', methods=['GET','POST'])
+def simi():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://st4rz.herokuapp.com/api/simsimi?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}
+
+@app.route('/api/bpk', methods=['GET','POST'])
+def bpk():
+	if request.args.get('text'):
+		try:
+			tak = request.args.get('text')
+			url = f'https://arugaz.herokuapp.com/api/bapakfont?kata={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter text'
+		}			
+@app.route('/api/lirik', methods=['GET','POST'])
+def lirik():
+	if request.args.get('judul'):
+		try:
+			tak = request.args.get('judul')
+			url = f'https://scrap.terhambar.com/lirik?word={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter judul'
+		}		
+@app.route('/api/igstalk', methods=['GET','POST'])
+def igstalk():
+	if request.args.get('uname'):
+		try:
+			tak = request.args.get('uname')
+			url = f'https://freerestapi.herokuapp.com/api/v1/igs?u={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['data'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter uname'
+		}		
+@app.route('/api/zodiak', methods=['GET','POST'])
+def zodiak():
+	if request.args.get('tgl-bln-thn'):
+		try:
+			tak = request.args.get('tgl-bln-thn')
+			url = f'https://arugaz.herokuapp.com/api/getzodiak?nama=wahyu&tgl-bln-thn={tak}'
+			kata = get(url).json()
+			return {
+				'lahir': kata['lahir'],
+				'ultah': kata['ultah'],
+				'usia': kata['usia'],
+				'zodiak': kata['zodiak'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter tgl-bln-thn'
+		}		
+		
+@app.route('/api/namaninja', methods=['GET','POST'])
+def namaninja():
+	if request.args.get('nama'):
+		try:
+			tak = request.args.get('nama')
+			url = f'https://api.terhambar.com/ninja?nama={tak}'
+			kata = get(url).json()
+			return {
+				'hasil': kata['result']['ninja'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter nama'
+		}		
+	
+@app.route('/api/nulis', methods=['GET','POST'])
+def nulis():
+	if request.args.get('kata'):
+		try:
+			tak = request.args.get('kata')
+			url = f'http://salism3.pythonanywhere.com/write?text={tak}'
+			kata = get(url).json()
+			return {
+				'hasil': kata['images'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter kata'
+		}		
+	
+@app.route('/api/twtimage', methods=['GET','POST'])
+def twtimage():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/twimg?url={tak}'
+			kata = get(url).json()
+			return {
+				'video': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}			
+@app.route('/api/twtvid', methods=['GET','POST'])
+def ytvid():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/twvid?url={tak}'
+			kata = get(url).json()
+			return {
+				'video': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}		
+@app.route('/api/ytmusik', methods=['GET','POST'])
+def ytmusik():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/ytmus?url={tak}'
+			kata = get(url).json()
+			return {
+				'judul': kata['titleInfo'],
+				'images': kata['getImages'],
+				'video': kata['getAudio'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}	
+@app.route('/api/ytvideo', methods=['GET','POST'])
+def ytvideo():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/ytvid?url={tak}'
+			kata = get(url).json()
+			return {
+				'judul': kata['titleInfo'],
+				'video': kata['getVideo'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}	
+@app.route('/api/translate', methods=['GET','POST'])
+def translate():
+	if request.args.get('kata'):
+		try:
+			tak = request.args.get('kata')
+			url = f'https://api.arugaz.my.id/api/edu/translate?lang=en&text={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['text'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter kata'
+		}
+@app.route('/api/corona', methods=['GET','POST'])
+def corona():
+	if request.args.get('negara'):
+		try:
+			tak = request.args.get('negara')
+			url = f'https://api.arugaz.my.id/api/edu/corona?country={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['results'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter negara'
+		}
+@app.route('/api/xnxx', methods=['GET','POST'])
+def xnxx():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/xnxx/detail?url={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}
+@app.route('/api/artimimpi', methods=['GET','POST'])
+def mimpi():
+	if request.args.get('mimpi'):
+		try:
+			tak = request.args.get('mimpi')
+			url = f'https://api.arugaz.my.id/api/primbon/tafsirmimpi?mimpi={tak}'
+			kata = get(url).json()
+			return {
+				'desc': kata['result']['hasil'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter mimpi'
+		}
+	
+@app.route('/api/nekopoi', methods=['GET','POST'])
+def nekopoi():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/anime/nekopoi/detail?url={tak}'
+			kata = get(url).json()
+			return {
+				'judul': kata['title'],
+				'desc': kata['desc'],
+				'link': kata['links'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}
 @app.route('/api/fb', methods=['GET','POST'])
 def fb():
 	if request.args.get('url'):
