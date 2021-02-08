@@ -979,8 +979,8 @@ def igeh():
 		try:
 			url = request.args.get('url')
 			data = {'id': url}
-			result = get('https://www.villahollanda.com/api.php?url=' + url).json()
-			if result['descriptionc'] == None:
+			result = get('https://st4rz.herokuapp.com/api/ig?url=' + url).json()
+			if result['resultresult'] == None:
 				return {
 					'status': False,
 					'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
@@ -988,7 +988,7 @@ def igeh():
 			else:
 				return {
 					'status': 200,
-					'result': result['descriptionc'],
+					'result': result['result'],
 				}
 		except Exception as e:
 			print(e)
