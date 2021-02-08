@@ -64,6 +64,70 @@ def layer():
 			'status': False,
 			'msg': '[!] Masukkan parameter base64image'
 		}
+	
+@app.route('/api/world', methods=['GET','POST'])
+def world():
+	try:
+		neko = get('https://api.terhambar.com/negara/World').json()
+		return {
+			'status': 200,
+			'result': neko
+		}
+	except:
+		neko = get('https://api.terhambar.com/negara/World').json()
+		return {
+			'status': 200,
+			'result': neko
+			
+		}
+
+@app.route('/api/animeinfo', methods=['GET','POST'])
+def animeinfo():
+	if request.args.get('query'):
+		try:
+			tak = request.args.get('query')
+			url = f'https://arugaz.herokuapp.com/api/dewabatch?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'thumb': kata['thumb'],
+				'desc': kata['sinopsis'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
+
+
+@app.route('/api/fb', methods=['GET','POST'])
+def fb():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+		
+			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}			
 @app.route('/api/cord', methods=['GET','POST'])
 def cord():
 	if request.args.get('query'):
