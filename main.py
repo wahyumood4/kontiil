@@ -107,10 +107,10 @@ def animeinfo():
 
 @app.route('/api/fb', methods=['GET','POST'])
 def fb():
-	if request.args.get('query'):
+	if request.args.get('url'):
 		try:
-			tak = request.args.get('query')
-			url = f'https://arugaz.herokuapp.com/api/dewabatch?q={tak}'
+			tak = request.args.get('url')
+			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
 			kata = get(url).json()
 			return {
 				'result': kata,
