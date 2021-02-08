@@ -106,28 +106,7 @@ def animeinfo():
 		}
 
 
-@app.route('/api/fb', methods=['GET','POST'])
-def fb():
-	if request.args.get('url'):
-		try:
-			tak = request.args.get('url')
-		
-			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
-			kata = get(url).json()
-			return {
-				'result': kata['result'],
-				'status': 200,	
-			}
-		except:
-			return {
-				'status': False,
-				'error': '[❗] eror'
-			}
-	else:
-		return {
-			'status': False,
-			'msg': '[!] Masukkan parameter url'
-		}			
+			
 @app.route('/api/cord', methods=['GET','POST'])
 def cord():
 	if request.args.get('query'):
