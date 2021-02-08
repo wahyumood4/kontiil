@@ -973,29 +973,44 @@ def world():
 			
 		}
 
-@app.route('/api/ig', methods=['GET','POST'])
-def igeh():
-	if request.args.get('url'):
+@app.route('/api/animeinfo', methods=['GET','POST'])
+def animeinfo():
+	if request.args.get('query'):
 		try:
-			url = request.args.get('url')
-			data = {'id': url}
-			result = get('https://st4rz.herokuapp.com/api/ig?url=' + url).json()
-			if result['resultresult'] == None:
-				return {
-					'status': False,
-					'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
-				}
-			else:
-				return {
-					'status': 200,
-					'result': result['result'],
-				}
-		except Exception as e:
-			print(e)
+			tak = request.args.get('query')
+			url = f'https://arugaz.herokuapp.com/api/dewabatch?q={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'thumb': kata['thumb'],
+				'desc': kata['sinopsis'],
+				'status': 200,	
+			}
+		except:
 			return {
 				'status': False,
-				'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
-				'error': True
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
+@app.route('/api/ig', methods=['GET','POST'])
+def ig():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://st4rz.herokuapp.com/api/ig?url={tak}'
+			kata = get(url).json()
+			return {
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
 			}
 	else:
 		return {
