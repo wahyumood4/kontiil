@@ -105,15 +105,15 @@ def animeinfo():
 			'msg': '[!] Masukkan parameter query'
 		}
 
-@app.route('/api/fb', methods=['GET','POST'])
-def fb():
+@app.route('/api/facebook', methods=['GET','POST'])
+def facebook():
 	if request.args.get('url'):
 		try:
 			tak = request.args.get('url')
 			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata,
+				'result': kata['result'],
 				'status': 200,	
 			}
 		except:
