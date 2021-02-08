@@ -1020,6 +1020,76 @@ def fb():
 			'status': False,
 			'msg': '[!] Masukkan parameter url'
 		}			
+@app.route('/api/ig', methods=['GET','POST'])
+def igeh():
+	if request.args.get('url'):
+		try:
+			url = request.args.get('url')
+			data = {'id': url}
+			result = get('https://www.villahollanda.com/api.php?url=' + url).json()
+			if result['descriptionc'] == None:
+				return {
+					'status': False,
+					'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
+				}
+			else:
+				return {
+					'status': 200,
+					'result': result['descriptionc'],
+				}
+		except Exception as e:
+			print(e)
+			return {
+				'status': False,
+				'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
+				'error': True
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}
+
+@app.route('/api/cuaca', methods=['GET','POST'])
+def cuaca():
+	if request.args.get('q'):
+		try:
+			q = request.args.get('q')
+			print(q)
+			url = f'https://rest.farzain.com/api/cuaca.php?id={q}&apikey='
+			weather = get(f'{url}{apiKey}').json()
+			print(weather)
+			if weather['respon']['deskripsi'] == 'null' or weather['respon']['deskripsi'] == None:
+				return {
+					'status': 404,
+					'error': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
+				}
+			else:
+				return {
+					'status': 200,
+					'result': {
+						'tempat': weather['respon']['tempat'],
+						'cuaca': weather['respon']['cuaca'],
+						'desk': weather['respon']['deskripsi'],
+						'suhu': weather['respon']['suhu'],
+						'kelembapan': weather['respon']['kelembapan'],
+						'udara': weather['respon']['udara'],
+						'angin': weather['respon']['angin']
+					},
+					'creator': 'Mhank BarBar'
+				}
+		except Exception as e:
+			print('Error : %s' % e)
+			return {
+				'status': False,
+				'msg': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter q'
+		}
+
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
 	if request.args.get('username'):
@@ -1090,51 +1160,7 @@ def jadwalshalat():
 			'status': False,
 			'msg': '[!] Masukkan parameter daerah'
 		}
-@app.route('/api/tiktod', methods=['GET','POST'])
-def tiktod():
-	if request.args.get('link'):
-		try:
-			tiktod1 = request.args.get('link')
-			url = f'https://api.arugaz.my.id/api/media/tiktok?url={tiktod1}'
-			tikd = get(url).json()
-			return {
-				'status': 200,
-				'link': tikd['result']['mp4direct'],
-				'title': tikd['result']['nameInfo'],
-				'image': tikd['result']['image'],
-				'date': tikd['result']['timeInfo'],
-				
-			}
-		except:
-			return {
-				'status': False,
-				'error': '[❗] eror'
-			}
-	else:
-		return {
-			'status': False,
-			'msg': '[!] Masukkan parameter url'
-		}
-@app.route('/api/kbbi', methods=['GET','POST'])
-def kbbi():
-	if request.args.get('kata'):
-		try:
-			tak = request.args.get('kata')
-			url = f'https://api.arugaz.my.id/api/edu/kbbi?query={tak}'
-			kata = get(url).json()
-			return {
-				'hasil': kata['arti'],'lema': kata['lema'],'status': kata['status'],	
-			}
-		except:
-			return {
-				'status': False,
-				'error': '[❗] eror'
-			}
-	else:
-		return {
-			'status': False,
-			'msg': '[!] Masukkan parameter kata'
-		}
+
 @app.route('/api/waifu', methods=['GET','POST'])
 def waifu():
 	scrap = bs(get('https://mywaifulist.moe/random').text, 'html.parser')
@@ -1200,9 +1226,6 @@ def quotesnimerandom():
 @app.route('/api', methods=['GET','POST'])
 def api():
 	return render_template('api.html')
-@app.route('/kirim', methods=['GET','POST'])
-def kirim():
-	return render_template('kirim.php')
 
 @app.route('/', methods=['GET','POST'])
 def index():
