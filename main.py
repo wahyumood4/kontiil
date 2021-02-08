@@ -996,8 +996,8 @@ def animeinfo():
 			'status': False,
 			'msg': '[!] Masukkan parameter query'
 		}
-@app.route('/api/ig', methods=['GET','POST'])
-def ig():
+@app.route('/api/igdl', methods=['GET','POST'])
+def igigdl():
 	if request.args.get('url'):
 		try:
 			tak = request.args.get('url')
