@@ -426,12 +426,12 @@ def ytmusik():
 	if request.args.get('url'):
 		try:
 			tak = request.args.get('url')
-			url = f'https://api.arugaz.my.id/api/media/ytmus?url={tak}'
+			url = f'https://api-anoncybfakeplayer.herokuapp.com/ytmp3?url={tak}'
 			kata = get(url).json()
 			return {
-				'judul': kata['titleInfo'],
-				'images': kata['getImages'],
-				'mp3': kata['getAudio'],
+				'judul': kata['title'],
+				'images': kata['thumb'],
+				'result': kata['result'],
 				'status': 200,	
 			}
 		except:
@@ -449,11 +449,11 @@ def ytvideo():
 	if request.args.get('url'):
 		try:
 			tak = request.args.get('url')
-			url = f'https://api.arugaz.my.id/api/media/ytvid?url={tak}'
+			url = f'https://api-anoncybfakeplayer.herokuapp.com/ytmp4?url={tak}'
 			kata = get(url).json()
 			return {
-				'judul': kata['titleInfo'],
-				'video': kata['getVideo'],
+				'judul': kata['title'],
+				'result': kata['result'],
 				'status': 200,	
 			}
 		except:
