@@ -294,10 +294,10 @@ def igstalk():
 	if request.args.get('uname'):
 		try:
 			tak = request.args.get('uname')
-			url = f'https://freerestapi.herokuapp.com/api/v1/igs?u={tak}'
+			url = f'https://api-anoncybfakeplayer.herokuapp.com/igdown?url={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['data'],
+				'result': kata['result'],
 				'status': 200,	
 			}
 		except:
