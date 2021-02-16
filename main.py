@@ -294,10 +294,15 @@ def igstalk():
 	if request.args.get('uname'):
 		try:
 			tak = request.args.get('uname')
-			url = f'https://api-anoncybfakeplayer.herokuapp.com/igdown?url={tak}'
+			url = f'https://api-anoncybfakeplayer.herokuapp.com/igstalk?username={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['result'],
+				'image': kata['pic'],
+				'username': kata['username'],
+				'follower': kata['follower'],
+				'following': kata['following'],
+				'bio': kata['bio'],
+				'post': kata['post'],
 				'status': 200,	
 			}
 		except:
@@ -1059,8 +1064,8 @@ def igeh():
 		try:
 			url = request.args.get('url')
 			data = {'id': url}
-			result = get('https://www.villahollanda.com/api.php?url=' + url).json()
-			if result['descriptionc'] == None:
+			result = get('https://api-anoncybfakeplayer.herokuapp.com/igdown?url=' + url).json()
+			if result['result'] == None:
 				return {
 					'status': False,
 					'result': 'https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg',
@@ -1068,7 +1073,7 @@ def igeh():
 			else:
 				return {
 					'status': 200,
-					'result': result['descriptionc'],
+					'result': result['result'],
 				}
 		except Exception as e:
 			print(e)
