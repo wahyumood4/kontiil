@@ -1028,7 +1028,7 @@ def brainly_scraper():
 		}
 
 @app.route('/api/kawalkorona', methods=['GET','POST'])
-def nekonimek():
+def kawalkorona():
 	try:
 		neko = get('https://api.kawalcorona.com/indonesia/').json()
 		return {
