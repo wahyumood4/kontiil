@@ -1027,6 +1027,20 @@ def brainly_scraper():
 			'msg': '[!] Masukkan parameter q'
 		}
 
+@app.route('/api/kawalkorona', methods=['GET','POST'])
+def nekonimek():
+	try:
+		neko = get('https://api.kawalcorona.com/indonesia/').json()
+		return {
+			'status': 200,
+			'result': neko
+		}
+	except:
+		neko = get('https://api.kawalcorona.com/indonesia/').json()
+		return {
+			'status': 200,
+			'result': neko
+		}
 @app.route('/api/nekonime', methods=['GET','POST'])
 def nekonimek():
 	try:
