@@ -1277,7 +1277,7 @@ def quotesnimerandom():
 	}
 @app.route('/api', methods=['GET','POST'])
 def api():
-	return render_template('api.html')
+	return render_template('index.html')
 
 @app.route('/', methods=['GET','POST'])
 def index():
