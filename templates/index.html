@@ -1,22 +1,443 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>wahyumpood API</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
-    <script data-ad-client="ca-pub-2725384379337735" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script data-ad-client="ca-pub-2725384379337735" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <base href="https://wahyugans.herokuapp.com/api">
+  <link href="https://indrijunanda.github.io/RuangAdmin/img/logo.png" rel="icon">
+  <title>wahy mood apis</title>
+  <link href="https://indrijunanda.github.io/RuangAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://absennurisku.000webhostapp.com/css/2.css" rel="stylesheet" type="text/css">
+  <link href="https://absennurisku.000webhostapp.com/css/1.css" rel="stylesheet">
+  <meta property="og:title" content="REST API TOOLS & DOWNLOADER ONLINE ">
+<meta property="og:description" content="Hai ganteng:v">
+<meta property="og:image" content="https://www.cloudways.com/blog/wp-content/uploads/Getting-Started-With-Magento-2-Rest-API-Banner.jpg">
+<meta property="og:url" content=/api">
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/androidstudio.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
 </head>
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- <script src="assets/js/main.js"></script> -->
+
+<body id="page-top">
+  <div id="wrapper" >
+    <!-- Sidebar -->
+     <ul class="navbar-nav sidebar sidebar-light accordion bg-info" id="accordionSidebar" style="color:black;">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-info" style="color:#fff;">
+       <div class="sidebar-brand-icon">
+          <img src="https://fdci.se/wp-content/uploads/2020/08/1596067888-picsay-1-picsay-1.png">
+        </div> 
+  
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/api">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Beranda</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#base"
+          aria-expanded="true" aria-controls="base">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>SOSIAL MEDIA</span>
+        </a>
+        <div id="base" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Online Tools ( APi's )</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/igstalk?uname=_wah_ramadan">Ig stalk</a>
+            <a class="collapse-item" href="http://wahyugans.herokuapp.com/api/ytmusik?url=https://www.youtube.com/watch?v=e1--y6LoC3k">Yt audio</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/ytvideo?url=https://www.youtube.com/watch?v=e1--y6LoC3k">Yt video</a>
+			<a class="collapse-item" href="https://api.arugaz.my.id/api/media/facebook?url=https://www.facebook.com/watch/?v=1393572814172251">Facebook</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/tiktod?link=https://www.tiktok.com/@graciajessicajane/video/6910824586909076738">Tiktok</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/twtimage?url=https://twitter.com/renaldypjs/status/1343516524934438912">twt-images</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/twtvid?url=https://twitter.com/weareoneEXO/status/1344811074864914433">twt-video</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#mager"
+          aria-expanded="true" aria-controls="mager">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>MAGER</span>
+        </a>
+        <div id="mager" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Online Tools ( APi's )</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nulis?kata=wahyu">Nulis</a>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/kbbi?kata=wahyu">KBBI</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/wiki?q=wahyu">Wiki</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/translate?kata=jancok">translate</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#finder"
+          aria-expanded="true" aria-controls="finder">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>FINDER</span>
+        </a>
+        <div id="finder" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Information Finder</h6>
+            <a class="collapse-item" href="http://wahyugans.herokuapp.com/api/lirik?judul=anjai">Lyrics Finder</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/cord?query=anjai">Cord</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/ttp?text=wahyu">Ttp</a>
+			
+
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#anime"
+          aria-expanded="true" aria-controls="anime">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>ANIME</span>
+        </a>
+        <div id="anime" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Information anime</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/animeinfo?query=naruto">anime info</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nekonime">nekonime</a>
+			<a class="collapse-item" href="#">loli</a>
+			
+
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#nsfw"
+          aria-expanded="true" aria-controls="nsfw">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>NSFW</span>
+        </a>
+        <div id="nsfw" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">NSFW Finder</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/xnxx?url=">xnxx Scraper</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/nekopoi?url=https://nekopoi.care/tsunpuri-episode-1-subtitle-indonesia">Nekopoi Scraper</a>
+			<a class="collapse-item" href="https://wazzapi.herokuapp.com/api/v1/randomh">Random Hentai</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#info"
+          aria-expanded="true" aria-controls="info">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>News</span>
+        </a>
+        <div id="info" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Info Finder</h6>
+            <a class="collapse-item" href="https://rest.farzain.com/api/cuaca.php?id=jember&apikey=O8mUD3YrHIy9KM1fMRjamw8eg">Cuaca</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/infogempa">Gempa</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=indonesia">Covid-id</a>
+			<a class="collapse-item" href="http://wahyugans.herokuapp.com/api/corona?negara=amerika">Covid-county</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/jadwaltv?ch=gtv">Jadwal tv</a>
+
+          </div>
+        </div>
+      </li>
+	  
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#utils"
+          aria-expanded="true" aria-controls="utils">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Utils</span>
+        </a>
+        <div id="utils" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Random API</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/namaninja?nama=wahyu">Nama jepang</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/bpk?text=wahyu">bpkfont</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#other"
+          aria-expanded="true" aria-controls="other">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Other</span>
+        </a>
+        <div id="other" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Other API</h6>
+            <a class="collapse-item" href="https://wahyugans.herokuapp.com/api/artimimpi?mimpi=mati">Artinama</a>	
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/zodiak?tgl-bln-thn=30-10-2003">Zodiak</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/simi?text=wahyu">simi</a>
+			<a class="collapse-item" href="https://wahyugans.herokuapp.com/api/merkhp?query=asus">merk HP</a>
+          </div>
+        </div>
+      </li>
+      
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top bg-info">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            
+            <div class="topbar-divider d-none d-sm-block"></div>
+<li class="nav-item dropdown no-arrow mx-1">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="alertsDropdown" role="button">
+<i class="fas fa-bell fa-fw"></i>
+<span class="badge badge-danger badge-counter">3</span>
+</a>
+<div aria-labelledby="alertsDropdown" class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+<h6 class="dropdown-header">
+                  email
+                </h6>
+<form action="https://absennurisku.000webhostapp.com/api/kirim.php" method="post">
+					<p><input type="text" name="nama" placeholder="Nama anda" size="30" required /></p>
+					<p><input type="email" name="email" placeholder="Email valid" size="30" required /></p>
+					<p><input type="text" name="judul" placeholder="Subjek pesan email" size="50" required /></p>
+					<p><textarea name="pesan" placeholder="Pesan anda" rows="7" cols="50" required></textarea>
+					<p><input type="submit" name="kirim" value="Kirim Pesan" /> <input type="reset" value="Hapus Text" /></p>
+				</form>
+<!-- <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a> -->
+</div>
+</li>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="https://instagram.com/_wah_ramadan" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="https://i.ibb.co/3MFJT4v/images-15.jpg" style="max-width: 100px">
+                <span class="ml-2 d-none d-lg-inline text-white small">.....</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://instagram.com/_wah_ramadan">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="https://instagram.com/_wah_ramadan">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="https://instagram.com/_wah_ramadan">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <!-- Attention -->
+          <div id="demo" class="alert alert-info alert-dismissible" role="alert">
+<!--            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span id="demo" aria-hidden="true">&times;</span>
+            </button> -->
+        <script>
+arrBulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+var txt = "";
+txt += "<p><b>Browser CodeName</b>: " + navigator.appCodeName + "</p>";
+txt += "<p><b>Browser Name</b>: " + navigator.appName + "</p>";
+txt += "<p><b>Cookies Enabled</b>: " + navigator.cookieEnabled + "</p>";
+txt += "<p><b>Browser Online</b>: " + navigator.onLine + "</p>";
+txt += "<p><b>Platform</b>: " + navigator.platform + "</p>";
+txt += "<p><b>User-agent header</b>: " + navigator.userAgent + "</p>";
+var d = new Date();
+const jam = d.getHours();
+const menit = d.getMinutes();
+const detik = d.getSeconds();
+const tgl = d.getDate();
+const bln = d.getMonth();
+const thn = d.getFullYear();
+const bulan = arrBulan[bln]
+/* if (jam > 1 && jam < 11) {
+*	view.innerHTML = 'Selamat pagi :)';
+* } else if (jam > 11 && < 15) {
+*	view.innerHTML = 'Selamat siang :)';
+* } else if (jam > 15 && < 18) {
+*	view.innerHTML = 'Selamat sore :)';
+* } else if (jam > 18 && < 24) {
+*	view.innerHTML = 'Selamat malam'
+* } else {
+*	view.innerHTML = 'Selamat datang:)'
+* }
+*/
+document.write(txt)
+document.write("Date : "+ jam +":"+ menit +":"+ detik +"~"+ tgl +"-"+ bulan +"-"+ thn +"<br>Welcome back!")</script>
+          </div>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      fone-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+</style>
+          <!-- Attention -->
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">CURHATAN WAHYU</h6>
+                </div>
+                <div class="card-body">
+                  <script language="JavaScript">
+var text="memang<br><br>DIRIKU HANYALAH SEORANG MANUSIA BIASA<br>TAPI AKU BERUSAHA MENJADI LEBIH BAIK <br>WALAU SERING GAGAL AKU TAKPERNAH MENYERAH<br>DAN<br>MAAF, KARENA SERING DIEMIN KAMU<br>SERING NYUEKIN KAMU<br>SEBENARNYA AKU NYUEKIN KAMU AKU PUNYA ALASAN<br>TAPI, KAMU PASTI TIDAK AKAN PERCAYA<br>NAMUN, BEBAN INI SANGATLAH MENYIKSA <br>TIDAK APA AKU MASIH BISA MENAHANNYA, TAPI TIDAK SELAMANYA<br>JADI, AKU MOHON MENGERTI POSISIKU SAAT INI <br>REMEMBER BACKHAT!!!...";
+var delay=60;
+var currentChar=1;
+var destination="[none]";
+function type()
+{
+//if (document.all)
+{
+var dest=document.getElementById(destination);
+if (dest)// && dest.innerHTML)
+{
+dest.innerHTML=text.substr(0, currentChar)+"<blink>_</blink>";
+currentChar++;
+if (currentChar>text.length)
+{
+currentChar=1;
+setTimeout("type()", 7000);
+}
+else
+{
+setTimeout("type()", delay);
+}
+}
+}
+}
+function startTyping(textParam, delayParam, destinationParam)
+{
+text=textParam;
+delay=delayParam;
+currentChar=1;
+destination=destinationParam;
+type();
+}
+</script> <b><div 0px="" 10px="" arial="" color:="" ff0000="" font:="" id="textDestination" margin:="" style="background-color: none;"></div></b> <script language="JavaScript">
+javascript:startTyping(text, 50, "textDestination");
+</script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>ngapain lo?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> 
+
+document.write(new Date().getFullYear()); 
+</script> -
+              <b><a href="https://instagram.com/_wah_ramadan" target="_blank">wahyu mood</a></b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery/jquery.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://indrijunanda.github.io/RuangAdmin/js/ruang-admin.min.js"></script>
+<script> 
+	
 </body>
+
 </html>
-<header>
-    <h1><a href="./">wahyumood Api</a></h1>
-    <p><a href="https://wahyugans.herokuapp.com/api">Click here for documentation</a></p>
-</header>
