@@ -471,6 +471,28 @@ def ytvideo():
 			'status': False,
 			'msg': '[!] Masukkan parameter url'
 		}	
+@app.route('/api/tiktod', methods=['GET','POST'])
+def tiktod():
+	if request.args.get('url'):
+		try:
+			tak = request.args.get('url')
+			url = f'https://api-anoncybfakeplayer.herokuapp.com/ytmp4?url={tak}'
+			kata = get(url).json()
+			return {
+				'judul': kata['title'],
+				'result': kata['result'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter url'
+		}	
 @app.route('/api/translate', methods=['GET','POST'])
 def translate():
 	if request.args.get('kata'):
@@ -585,10 +607,11 @@ def fb():
 		try:
 			tak = request.args.get('url')
 		
-			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
+			url = f'https://videfikri.com/api/fbdl/?urlfb={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['result'],
+				'image': kata['result']['gambar'],
+				'result': kata['result']['url'],
 				'status': 200,	
 			}
 		except:
