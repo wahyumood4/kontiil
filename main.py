@@ -110,10 +110,10 @@ def facebook():
 	if request.args.get('url'):
 		try:
 			tak = request.args.get('url')
-			url = f'https://api.arugaz.my.id/api/media/facebook?url={tak}'
+			url = f'https://videfikri.com/api/fbdl/?urlfb={tak}'
 			kata = get(url).json()
 			return {
-				'result': kata['result'],
+				'result': kata['result']['url'],
 				'status': 200,	
 			}
 		except:
