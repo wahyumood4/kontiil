@@ -610,7 +610,7 @@ def fb():
 			url = f'https://videfikri.com/api/fbdl/?urlfb={tak}'
 			kata = get(url).json()
 			return {
-				'image': kata['result']['gambar'],
+				
 				'result': kata['result']['url'],
 				'status': 200,	
 			}
