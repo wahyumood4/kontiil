@@ -1274,7 +1274,17 @@ def infogempa():
 		'lokasi': em[4].text,
 		'potensi': em[5].text
 	}
-
+@app.route('/api/hadis/muslim', methods=['GET','POST'])
+def hadismuslim():
+	muslim = json.loads(open('lib/muslim.json').read())
+	result = random.choice(muslim)
+	print(result)
+	return {
+		'status': 200,
+		'number': result['number'],
+		'arab': result['arab'],
+		'arti': result['id']
+	}
 @app.route('/api/randomquotes', methods=['GET','POST'])
 def quotes():
 	quotes_file = json.loads(open('quotes.json').read())
