@@ -80,8 +80,8 @@ def world():
 			'result': neko
 			
 		}
-@app.route('/api/hadis/muslim', methods=['GET','POST'])
-def animeinfo():
+@app.route('/api/hadis2/muslim', methods=['GET','POST'])
+def hadiesmuslim():
 	if request.args.get('no'):
 		try:
 			tak = request.args.get('no')
