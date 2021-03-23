@@ -80,7 +80,28 @@ def world():
 			'result': neko
 			
 		}
-
+@app.route('/api/hadis/muslim', methods=['GET','POST'])
+def animeinfo():
+	if request.args.get('no'):
+		try:
+			tak = request.args.get('no')
+			url = f'https://api.hadith.sutanlab.id/books/muslim/{tak}'
+			kata = get(url).json()
+			return {
+				'arab': kata['arab'],
+				'desc': kata['id'],
+				'status': 200,	
+			}
+		except:
+			return {
+				'status': False,
+				'error': '[❗] eror'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter query'
+		}
 @app.route('/api/animeinfo', methods=['GET','POST'])
 def animeinfo():
 	if request.args.get('query'):
