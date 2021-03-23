@@ -88,8 +88,9 @@ def hadiesmuslim():
 			url = f'https://api.hadith.sutanlab.id/books/muslim/{tak}'
 			kata = get(url).json()
 			return {
-				'arab': kata['arab'],
-				'desc': kata['id'],
+				'arab': kata['data']['contents']['arab'],
+				'desc': kata['data']['contents']['id'],
+				'HR': kata['message'],
 				'status': 200,	
 			}
 		except:
