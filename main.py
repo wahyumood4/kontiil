@@ -1132,7 +1132,7 @@ def igeh():
 			else:
 				return {
 					'status': 200,
-					'result': result['result'],
+					'result': result['result']['url'],
 				}
 		except Exception as e:
 			print(e)
