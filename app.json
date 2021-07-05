@@ -1,7 +1,7 @@
 {
-  "name": "VPS BY KING REMIX",
-  "description": "Deploy VNC to Heroku.",
-  "keywords": ["VNC", "Docker"],
+  "name": "wazz",
+  "description": "wazzapi.",
+  "keywords": "api",
   "env": {
   },
   "website": "",
